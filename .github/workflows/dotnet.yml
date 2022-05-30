@@ -32,6 +32,6 @@ jobs:
         artifacts: "pub/*.exe"
         bodyFile: "README.md"
         token: ${{ secrets.TOKEN }}
-        tag: 0.0.0.${{ GITHUB_SHA }}-alpha
+        tag: 0.0.0.${{ github.sha }}-alpha
         replacesArtifacts: true
         removeArtifacts: true
