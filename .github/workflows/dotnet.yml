@@ -11,13 +11,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.100
+        
     - name: Restore dependencies
       run: dotnet restore
+      
     - name: Build
       run: dotnet build --no-restore
+      
     - name: publish
       run: dotnet publish -r win-x64 -o pub --self-contained true
+      
+    - name: releae
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "pub/"
+        bodyFile: "body.md"
+        token: ${{ secrets.TOKEN }}
