@@ -33,3 +33,5 @@ jobs:
         bodyFile: "README.md"
         token: ${{ secrets.TOKEN }}
         tag: 0.0.1-alpha
+        replacesArtifacts: true
+        removeArtifacts: true
