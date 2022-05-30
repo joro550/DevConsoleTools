@@ -7,7 +7,7 @@ public class StringUpperCommand: Command<StringUpperCommand.Settings>
 {
     public class Settings : CommandSettings
     {
-        [CommandArgument(0, "[Value]")]
+        [CommandArgument(0, "<Value>")]
         public string Value { get; set; } = string.Empty;
     }
 

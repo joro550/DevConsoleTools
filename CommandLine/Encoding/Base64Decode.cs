@@ -8,7 +8,7 @@ public class Base64Decode : Command<Base64Decode.Settings>
 {
     public class Settings : CommandSettings
     {
-        [Required, CommandArgument(0, "[Value]")]        
+        [Required, CommandArgument(0, "<Value>")]        
         public string Value { get; set; } = string.Empty;
     }
     
