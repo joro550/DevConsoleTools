@@ -32,3 +32,4 @@ jobs:
         artifacts: "pub/"
         bodyFile: "body.md"
         token: ${{ secrets.TOKEN }}
+        tag: 0.0.1-alpha
