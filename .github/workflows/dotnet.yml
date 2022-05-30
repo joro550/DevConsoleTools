@@ -27,7 +27,7 @@ jobs:
       run: dotnet publish -r win-x64 -o pub --self-contained true
       
     - name: releae
-    - uses: ncipollo/release-action@v1
+      uses: ncipollo/release-action@v1
       with:
         artifacts: "pub/"
         bodyFile: "body.md"
