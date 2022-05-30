@@ -29,7 +29,7 @@ jobs:
     - name: releae
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "pub/"
+        artifacts: "pub/*.exe"
         bodyFile: "README.md"
         token: ${{ secrets.TOKEN }}
         tag: 0.0.0.${{ env.GITHUB_SHA }}-alpha
