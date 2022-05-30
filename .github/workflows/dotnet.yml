@@ -20,4 +20,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: publish
-      run: dotnet publish -o pub --self-contained true
+      run: dotnet publish -r win-x64 -o pub --self-contained true
