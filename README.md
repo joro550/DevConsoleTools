@@ -2,6 +2,12 @@
 I wanted to create a command line tool that could do some stuff that I was using different websites for daily
 
 
+# How to use
+Each release should have a `dev.exe` file, you can download this file into a folder of your choice then set a environment varibable to go to that folder and just type `dev` plus the command you want to run i.e. `dev gg`
+
+---
+
+
 Here are a few that are currently supported:
 
 > Generate a random guid
