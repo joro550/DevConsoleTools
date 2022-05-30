@@ -30,5 +30,6 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         artifacts: "pub/"
-        bodyFile: "body.md"
+        bodyFile: "README.md"
         token: ${{ secrets.TOKEN }}
+        tag: 0.0.1-alpha
