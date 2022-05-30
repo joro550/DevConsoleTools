@@ -54,6 +54,6 @@ app.Configure(config =>
             .WithDescription("upper cases string")
             .WithExample(new[] {"string", "to-upper", "value"});
     });
-});
+}); 
 
 await app.RunAsync(args);
