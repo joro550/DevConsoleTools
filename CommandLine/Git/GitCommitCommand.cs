@@ -10,7 +10,7 @@ public class GitCommitCommand : AsyncCommand<GitCommitCommand.Settings>
 {
     public class Settings : CommandSettings
     {
-        [CommandOption("--message|-m"),
+        [CommandArgument(0,"<Message>"),
          Description("Commit message")]
         public string Message { get; set; } 
             = string.Empty;
