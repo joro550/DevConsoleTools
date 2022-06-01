@@ -36,6 +36,9 @@ app.Configure(config =>
     
     config.AddCommand<GitPushCommand>("gp")
         .WithDescription("git push");
+    
+    config.AddCommand<GitBranchCommand>("gb")
+        .WithDescription("git branch --set-upstream");
 });
 
 await app.RunAsync(args);
