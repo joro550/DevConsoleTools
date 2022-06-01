@@ -7,11 +7,8 @@ public static class Shell
     public static string Bash(this string cmd) 
         => Run("/bin/bash", $"-c \"{cmd.Replace("\"", "\\\"")}\"");
 
-    public static string Bat(this string cmd) 
-        => Run("cmd.exe", $"/c \"{cmd.Replace("\"", "\\\"")}\"");
-
     public static async Task<string> BatAsync(this string cmd) 
-        => await RunAsync("cmd.exe", $"/c \"{cmd.Replace("\"", "\\\"")}\"");
+        => await RunAsync("cmd.exe", $"/c {cmd}");
 
     private static string Run (string filename, string arguments)
     {
