@@ -24,7 +24,7 @@ public class GenerateEmailCommand : Command<GenerateEmailCommand.Settings>
             table.AddRow(email);
         }
 
-        AnsiConsole.Render(table);
+        AnsiConsole.Write(table);
         return 1;
     }
 }
