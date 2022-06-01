@@ -12,8 +12,8 @@ public class GitAddCommand : AsyncCommand<GitAddCommand.Settings>
 
     public override async Task<int> ExecuteAsync(CommandContext context, Settings settings)
     {
-        var batAsync = await "git add .".BatAsync();
-        AnsiConsole.WriteLine(batAsync);
+        var result = await "git add --all -v".BatAsync();
+        AnsiConsole.WriteLine(result);
         return await Task.FromResult(1);
     }
 }

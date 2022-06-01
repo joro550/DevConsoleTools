@@ -25,9 +25,7 @@ public class GitCommitCommand : AsyncCommand<GitCommitCommand.Settings>
 
     public override async Task<int> ExecuteAsync(CommandContext context, Settings settings)
     {
-        var cmd = $"git commit -m \"{settings.Message}\"";
-        var batAsync = await cmd.BatAsync();
-        AnsiConsole.WriteLine(batAsync);
+        AnsiConsole.WriteLine(await $"git commit -m \"{settings.Message}\"".BatAsync());
         return await Task.FromResult(1);
     }
 }
