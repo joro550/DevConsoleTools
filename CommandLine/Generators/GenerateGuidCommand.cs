@@ -30,7 +30,7 @@ public class GenerateGuidCommand : AsyncCommand<GenerateGuidCommand.Settings>
         if (settings.Amount > 1)
         {
             var values = Enumerable.Range(0, settings.Amount)
-                .Select(_ => format);
+                .Select(_ => Guid.NewGuid().ToString(settings.Hyphens ? "N" : "D"));
             var table = new Table();
             table.AddColumn(new TableColumn("Guid").Centered());
         

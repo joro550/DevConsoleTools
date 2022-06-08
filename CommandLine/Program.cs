@@ -39,6 +39,9 @@ app.Configure(config =>
     
     config.AddCommand<GitBranchCommand>("gb")
         .WithDescription("git branch --set-upstream");
+    
+    config.AddCommand<GitCloneCommand>("gcl")
+        .WithDescription("git clone");
 });
 
 await app.RunAsync(args);

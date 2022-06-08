@@ -21,8 +21,7 @@ public class ChangeDirectoryCommand : AsyncCommand<ChangeDirectoryCommand.Settin
         var choice = lastChoice = AnsiConsole.Prompt(choices);
         if (string.Equals(choice, "here", StringComparison.CurrentCultureIgnoreCase))
         {
-            System.IO.Directory.SetCurrentDirectory(settings.Location 
-                                                    ?? System.IO.Directory.GetCurrentDirectory());
+            await ChangeDirectory(lastChoice);
             return await Task.FromResult(1);
         }
 
@@ -33,10 +32,14 @@ public class ChangeDirectoryCommand : AsyncCommand<ChangeDirectoryCommand.Settin
             choice = AnsiConsole.Prompt(choices);
         }
 
-        var batAsync = await $"git add .".BatAsync();
-        AnsiConsole.WriteLine(batAsync);
-        
+        await ChangeDirectory(lastChoice);
         return await Task.FromResult(1);
+    }
+
+    private static async Task ChangeDirectory(string lastChoice)
+    {
+        var result = await $"cd {lastChoice}".PowershellAsync();
+        AnsiConsole.WriteLine(result);
     }
 
     private static SelectionPrompt<string> GetChoices(string location)
